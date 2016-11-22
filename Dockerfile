@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow
+FROM philipz/rpi-tensorflow
 MAINTAINER Brian McIlwain <brianwmcilwain@gmail.com>
 
 ADD mnist_softmax.py /root/mnist_softmax.py
