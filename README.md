@@ -40,7 +40,7 @@ To begin to understand this, the first thing to realize is that running these co
 What just happened?
 -------------------
 
-The application that you just ran did four things:
+Docker ran an application contained in a container. That application did four things:
 
     1. Downloaded to the container many images of handwritten digits 0-9.
     2. Trained on several hundred of those images by being shown the image and told what number it is, 0-9.
@@ -49,7 +49,7 @@ The application that you just ran did four things:
     4. Reported on the accuracy of the guesses by being told the correct answers and printing the 
        accuracy 0-1, 1 being perfect accuracy.
 
-This is called the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) problem, and is the hello world program in machiene learning.
+This is called the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) problem, and is commonly known as the hello world program in machiene learning.
 
 So what is Docker?
 ---------------
@@ -64,7 +64,7 @@ docker run -it bmcilw1/mnist bash
 
 This will launch bash prompt for that container. Take a look around. You can leave by typing `exit` into the bash prompt.
 
-OK, so that's all fine for one application. The true power of Docker is that it can actually handle running MANY containers simultaneously, on limited hardware. This is because spinning up a container, unlike starting a VM, is actually a very cheap process. You can try launching many versions of the container by running `docker run -d bmcilw1/mnist` and see them all with `docker ps`.
+OK, so that's all fine for one application. The true power of Docker is that it can actually handle running MANY containers simultaneously, on limited hardware. This is because spinning up a container, unlike starting a VM, is actually a very cheap process. You can try launching many versions of the container by running `docker run -d bmcilw1/mnist` and see them all with `docker ps`. You might wonder why the containers exit after running the code. This is because, while doing otherwise is possible, each container launches for the purpose of running only one command, and will auto-exit upon the compleation of that command.
 
 How did I set this up
 ---------------------
