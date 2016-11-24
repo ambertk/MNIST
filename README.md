@@ -1,5 +1,5 @@
-A Docker Intro
-==============
+An Intro to Docker
+==================
 
 By Brian McIlwain and Wenxiu Hu
 
