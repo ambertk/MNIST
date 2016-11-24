@@ -17,7 +17,7 @@ curl -sSL https://get.docker.com | sh
 Running it
 ----------
 
-Once you have Docker, if you have an x86-like machine you can run the project by typing
+Once you have Docker, if you have an x86-like machine (Windows/Mac/Linux) you can run the project by typing
 
 ```bash
 docker run bmcilw1/mnist
@@ -35,7 +35,7 @@ This will take a while the first run because it needs to fetch the container fro
 What did NOT happen
 -------------------
 
-To begin to understand this, the first thing to realize is that running these commands did NOT actually install anything at all onto your computer. The only thing that was installed was Docker itself, which we did in step one. We just told Docker to run this thing, and it just worked.
+To begin to understand this, the first thing to realize is that running these commands did NOT actually install anything at all onto your computer. The only thing that was installed was Docker itself, which we did in step one. We just told Docker to run this thing, and it just worked. The only thing that was downloaded was something called a container, an image containing the code that we wanted to run.
 
 What just happened?
 -------------------
@@ -44,8 +44,12 @@ The application that you just ran did four things:
 
     1. Downloaded to the container many images of handwritten digits 0-9.
     2. Trained on several hundred of those images by being shown the image and told what number it is, 0-9.
-    3. Tested on test images that it never saw before by being shown the image and guessing which number it was, 0-9.
-    4. Reported on the accuracy of the guesses by being told the correct answers and printing the accuracy 0-1, 1 being perfect accuracy.
+    3. Tested on test images that it never saw before by being shown the image and guessing 
+       which number it was, 0-9.
+    4. Reported on the accuracy of the guesses by being told the correct answers and printing the 
+       accuracy 0-1, 1 being perfect accuracy.
+
+This is called the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) problem, and is the hello world program in machiene learning.
 
 So what is Docker?
 ---------------
