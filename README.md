@@ -43,7 +43,7 @@ To begin to understand this, the first thing to realize is that running these co
 So what is Docker?
 ---------------
 
-Docker runs arbitrary code by running it in something called a container. I like the explanation found here: <https://blog.docker.com/2016/03/containers-are-not-vms/>. A container is analogous to a virtual machine the same way an apartment is analogous to a house. A house (and a VM) typically has plenty of space for a variety of activities, and does not really share much of anything with the neighbors in terms of utilities etc. An apartment (or a container) is much more dedicated to your present needs, and infrastructure is shared with neighbors. 
+Docker runs arbitrary code by running it in something called a container. I like the explanation found [here](https://blog.docker.com/2016/03/containers-are-not-vms/). A container is analogous to a virtual machine the same way an apartment is analogous to a house. A house (and a VM) typically have plenty of space for a variety of activities, and does not really share much of anything with the neighbors in terms of utilities etc. An apartment (or a container) are both much more dedicated to your present needs, and infrastructure is shared with neighbors. 
 
 With a container, the purpose is to run ONE application. You install only those dependencies strictly necessary to run that application, and you do so on top of the smallest possible OS layer. All this is then packaged into an extremely light-weight image which holds these pieces plus your code. For example, the container that we ran is only ~300MB, and it includes all of these things PLUS its own OS. Let's explore this by telling the container to run a command other than the one that is specified by default:
 
