@@ -23,14 +23,14 @@ Once you have Docker, if you have an x86-like machine (Windows/Mac/Linux) you ca
 docker run bmcilw1/mnist
 ```
 
-Or, on a raspberry pi or other ARM processor device
+Or, on a raspberry pi or other ARM processor device you will need to add `:rpi` to the end of the container name like below. Remember to do this each time the container name appears!
 
 ```bash
 docker run bmcilw1/mnist:rpi
 
 ```
 
-This will take a while the first run because it needs to fetch the container from your internet connection.
+This will take a long time the first run because it needs to fetch the container from your internet connection.
 
 What did NOT happen
 -------------------
