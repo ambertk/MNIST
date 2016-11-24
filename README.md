@@ -48,30 +48,30 @@ Docker runs arbitrary code by running it in something called a container. I like
 With a container, the purpose is to run ONE application. You install only those dependencies strictly necessary to run that application, and you do so on top of the smallest possible OS layer. All this is then packaged into an extremely light-weight image which holds these pieces plus your code. For example, the container that we ran is only ~300MB, and it includes all of these things PLUS its own OS. Let's explore this by telling the container to run a command other than the one that is specified by default:
 
 ```bash
-docker run -p 8888:8888 bmcilw1/docker_intro bash
+docker run -it bmcilw1/mnist bash
 ```
 
 This will launch bash prompt for that container. Take a look around. You can leave by typing `exit` into the bash prompt.
 
-OK, so that's all fine for one application. The true power of Docker is that it can actually handle running MANY containers simultaneously, on limited hardware. This is because spinning up a container, unlike starting a VM, is actually a very cheap process. You can try launching many versions of the container by running `docker run -d bmcilw1/docker_intro` and see them all with `docker ps`. When your done, kill them all (haha) with `docker kill the_id's_here`.
+OK, so that's all fine for one application. The true power of Docker is that it can actually handle running MANY containers simultaneously, on limited hardware. This is because spinning up a container, unlike starting a VM, is actually a very cheap process. You can try launching many versions of the container by running `docker run -d bmcilw1/mnist` and see them all with `docker ps`.
 
 How did I set this up
 ---------------------
 
-Setting up my application to run on Docker was actually far easier than trying to run it locally, as I did not have most of the dependencies installed. Dockerizing an application takes place in just a few steps. First, you need the code that you want to run. Then, you write a Dockerfile that specifies which container image you wish to use as your starting point, adds any dependencies not present, and finally adds your code to the container. Last, you build that image. At that point, you can then run that container as we have before.
+Setting up my application to run on Docker was actually pretty easy. Dockerizing an application takes place in just a few steps. First, you need the code that you want to run. Then, you write a Dockerfile that specifies which container image you wish to use as your starting point, adds any dependencies not present, and finally adds your code to the container. Last, you build that image. At that point, you can then run that container as we have before.
 
-You can view the complete code files here:
+You can view the complete code files here: https://github.com/bmcilw1/MNIST
 
 Build them yourself by cloning the repo and opening the folder running:
 
 ```bash
-docker build -t my_docker_intro .
+docker build -t my_mnist .
 ```
 
 And run it using
 
 ```bash
-docker run -d -p 8888:8888 my_docker_intro
+docker run my_mnist
 ```
 
 Takeaways
