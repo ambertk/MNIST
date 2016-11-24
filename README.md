@@ -49,12 +49,12 @@ Docker ran an application contained in a container. That application did four th
     4. Reported on the accuracy of the guesses by being told the correct answers and printing the 
        accuracy 0-1, 1 being perfect accuracy.
 
-This is called the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) problem, and is commonly known as the hello world program in machine learning.
+This is called the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) problem, and is commonly known as the hello world program in machine learning. As the purpose of this tutorial is more geared to explaining Docker than machine learning, I did not write the code or prepare a seperate tutorial for it. Instead, I used the code from a TensorFlow (a popular machine learning library) tutorial, which you can follow if you're intrested [here](https://www.tensorflow.org/versions/r0.11/tutorials/mnist/beginners/index.html).
 
 So what is Docker?
----------------
+------------------
 
-Docker runs arbitrary code by running it in something called a container. I like the explanation found [here](https://blog.docker.com/2016/03/containers-are-not-vms/). A container is analogous to a virtual machine the same way an apartment is analogous to a house. A house (and a VM) typically have plenty of space for a variety of activities, and does not really share much of anything with the neighbors in terms of utilities etc. An apartment (or a container) are both much more dedicated to your present needs, and infrastructure is shared with neighbors. 
+Docker runs arbitrary code by packaging it and executing it in something called a container. I like the explanation found [here](https://blog.docker.com/2016/03/containers-are-not-vms/). A container is analogous to a virtual machine the same way an apartment is analogous to a house. A house (and a VM) typically have plenty of space for a variety of activities, and does not really share much of anything with the neighbors in terms of utilities etc. An apartment (or a container) are both much more dedicated to your present needs, and infrastructure is shared with neighbors. 
 
 With a container, the purpose is to run ONE application. You install only those dependencies strictly necessary to run that application, and you do so on top of the smallest possible OS layer. All this is then packaged into an extremely light-weight image which holds these pieces plus your code. For example, the container that we ran is only ~300MB, and it includes all of these things PLUS its own OS. Let's explore this by telling the container to run a command other than the one that is specified by default:
 
@@ -71,15 +71,15 @@ How did I set this up
 
 Setting up my application to run on Docker was actually pretty easy. Dockerizing an application takes place in just a few steps. First, you need the code that you want to run. Then, you write a Dockerfile that specifies which container image you wish to use as your starting point, adds any dependencies not present, and finally adds your code to the container. Last, you build that image. At that point, you can then run that container as we have before.
 
-You can view the complete code files here: https://github.com/bmcilw1/MNIST
+Take a look at the Dockerfiles that I wrote here: https://github.com/bmcilw1/MNIST
 
-Build them yourself by cloning the repo and opening the folder running:
+You can build them yourself by cloning the repo and opening the folder running:
 
 ```bash
 docker build -t my_mnist .
 ```
 
-And run it using
+You can now run your own (identical) build:
 
 ```bash
 docker run my_mnist
@@ -88,4 +88,4 @@ docker run my_mnist
 Takeaways
 ---------
 
-In this tutorial, we've explored Docker basics and shown how we can use Docker to run arbitrary code. The next time that your find yourself wanting to add something to a server, I hope you remember the power, portability, and cost-effectiveness of trying out Docker.
+In this tutorial, we've explored Docker basics and shown how we can use Docker to run arbitrary code. The next time that you find yourself wanting to put something on a server experience for yourself the the power, portability, and cost-effectiveness of using Docker.
