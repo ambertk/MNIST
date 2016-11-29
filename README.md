@@ -43,7 +43,7 @@ What just happened?
 Docker ran an application contained in a container. That application did four things:
 
     1. Downloaded to the container many images of handwritten digits 0-9.
-    2. Trained on several hundred of those images by being shown the image and told what number it is, 0-9.
+    2. Trained on many thousands of those images by being shown the image and told what number it is, 0-9.
     3. Tested on test images that it never saw before by being shown the image and guessing 
        which number it was, 0-9.
     4. Reported on the accuracy of the guesses by being told the correct answers and printing the 
