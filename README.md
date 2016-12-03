@@ -88,4 +88,4 @@ docker run my_mnist
 Takeaways
 ---------
 
-In this tutorial, we've explored Docker basics and shown how we can use Docker to run arbitrary code. The next time that you find yourself wanting to put something on a server experience for yourself the the power, portability, and cost-effectiveness of using Docker.
+In this tutorial, we've explored Docker basics and shown how we can use Docker to run arbitrary code. The next time that you find yourself wanting to put something on a server I invite you to experience for yourself the the power, portability, and cost-effectiveness of using Docker.
